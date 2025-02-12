@@ -41,10 +41,10 @@ public class UserService {
 
     public User update(String email, User editedUser) {
         User newUser = findByEmail(email);
-        System.out.println(newUser.getEmail()+" "+ newUser.getName());
         newUser.setName(editedUser.getName());
         newUser.setEmail(editedUser.getEmail());
         newUser.setPassword(editedUser.getPassword());
+        newUser.setMovies(editedUser.getMovies());
         return userRespository.save(newUser);
     }
 
