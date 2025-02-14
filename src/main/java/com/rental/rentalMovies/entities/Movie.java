@@ -1,5 +1,7 @@
 package com.rental.rentalMovies.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -26,11 +28,12 @@ public class Movie {
     private String title;
 
     @Lob
-    @jakarta.validation.constraints.NotEmpty(message = "The image path must be provided")
+    @jakarta.validation.constraints.NotEmpty(message = "The overview must be provided")
     private String overview;
 
     @ManyToOne
-    @JoinColumn(columnDefinition = "user_id")
+    @JoinColumn(name = "user_id", nullable = false)
+    @JsonBackReference
     private User user;
 
 }
