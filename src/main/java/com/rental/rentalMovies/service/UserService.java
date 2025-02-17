@@ -44,7 +44,9 @@ public class UserService {
         newUser.setName(editedUser.getName());
         newUser.setEmail(editedUser.getEmail());
         newUser.setPassword(editedUser.getPassword());
-        newUser.setMovies(editedUser.getMovies());
+        
+        newUser.getMovies().clear();
+        newUser.getMovies().addAll(editedUser.getMovies());
         return userRespository.save(newUser);
     }
 

@@ -33,7 +33,7 @@ public class User {
     @jakarta.validation.constraints.NotEmpty(message = "The user password must be provided")
     private String password;
 
-    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<Movie> movies;
 
