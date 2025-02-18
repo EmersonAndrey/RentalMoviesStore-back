@@ -5,10 +5,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.rental.rentalMovies.entities.Movie;
 import com.rental.rentalMovies.entities.User;
 import com.rental.rentalMovies.exception.ExistingUserException;
 import com.rental.rentalMovies.exception.ResourceNotFoundException;
 import com.rental.rentalMovies.repository.UserRespository;
+
+import jakarta.transaction.Transactional;
 
 @Service
 public class UserService {
@@ -39,12 +42,13 @@ public class UserService {
         return userRespository.findAll();
     }
 
+    @Transactional
     public User update(String email, User editedUser) {
         User newUser = findByEmail(email);
         newUser.setName(editedUser.getName());
         newUser.setEmail(editedUser.getEmail());
         newUser.setPassword(editedUser.getPassword());
-        
+
         newUser.getMovies().clear();
         newUser.getMovies().addAll(editedUser.getMovies());
         return userRespository.save(newUser);
