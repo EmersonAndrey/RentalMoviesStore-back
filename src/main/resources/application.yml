@@ -2,7 +2,7 @@ spring:
   application:
     name: RentalMovies
   datasource:
-    url: jdbc:mysql://localhost:3306/rentalmovies?user=admin&password=admin&useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://mysql:3306/rentalmovies?useUnicode=true&characterEncoding=UTF-8
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: admin
