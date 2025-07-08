@@ -139,4 +139,3 @@ Para executar o sistema completo, clone e rode também o frontend:
 ## 👨‍💻 Desenvolvedor
 
 **Emerson Andrey Fausto dos Santos**  
-[GitHub](https://github.com/EmersonAndrey)
