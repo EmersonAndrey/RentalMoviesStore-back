@@ -27,7 +27,10 @@ Este é o **back-end** da aplicação **Rental Movies Store**, um sistema que fu
 
 🔹 **Backend**
 - ☕ Java 17  
-- 🧩 Spring Boot  
+- 🧩 Spring Boot
+
+🔹 **DataBase**
+- 💾 MySQL
 
 ---
 
